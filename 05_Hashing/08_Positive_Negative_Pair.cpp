@@ -19,7 +19,7 @@ pairwirse postive and negative. 6 and
 
 //Approach :
 // Time Complexity : O(n);
-// Space Complexity : O(n)
+// Space Complexity : O(n);
 /*
 The idea is to use hashing. Traverse the given array, increase the count at absolute value of hash table. If count becomes 2, store its absolute value in another vector. And finally sort the vector. If the size of the vector is 0, print "0", else for each term in vector print first its negative value and the the positive value.
 */

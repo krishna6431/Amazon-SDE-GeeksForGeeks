@@ -1,7 +1,28 @@
-//Initial Template for C++
+//Amazon SDE GeeksForGeeks Problems
+//Code is Written by Krishna (krishna_6431)
+//Topic : Array
 
-// CPP code to find largest and 
-// second largest element in the array
+// Problem Statement :
+/*
+Given an array arr[] of size N of positive integers which may have duplicates. The task is to find the maximum and second maximum from the array, and both of them should be distinct, so If no second max exists, then the second max will be -1.
+
+Example 1:
+
+Input:
+N = 3
+arr[] = {2,1,2}
+Output: 2 1
+Explanation: From the given array 
+elements, 2 is the largest and 1 
+is the second largest.
+
+*/
+
+
+// Time Complexity : O(n);
+// Space Complexity : O(1);
+
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -26,11 +47,7 @@ vector<int> largestAndSecondLargest(int n, int arr[]){
     int max = INT_MIN, max2= INT_MIN;
     
     /*********************************
-     * Your code here
-     * This function should return a
-     * vector with first element as
-     * max and second element as 
-     * second max
+     Code is witten by Krishna
      * *******************************/
      set<int>v;
      vector<int>temp;
