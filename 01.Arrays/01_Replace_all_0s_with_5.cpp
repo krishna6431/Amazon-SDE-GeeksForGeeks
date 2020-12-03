@@ -23,7 +23,7 @@ number will be "1554".
 /*
 Algorithm: 
     1.Check a base case when the number is 0 return 5, for all other cases form a recursive function.
-    2.The function (solve(int n))can be defined as follows, if the number passed is 0 then return 0, else extract the 3.last digit i.e. n = n/10 and remove the last digit. If the last digit is zero the assign 5 to it.
+    2.The function (solve(int n))can be defined as follows, if the number passed is 0 then return 0, else extract the 3.last digit i.e. n = n/10 and remove the last digit. If         the last digit is zero the assign 5 to it.
     4.Now return the value by calling the recursive function for n, i.e return solve(n)*10 + digit.
     5.print the answer.
 */
