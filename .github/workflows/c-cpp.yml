@@ -1,3 +1,6 @@
+- name: EditorConfig-Action
+  uses: zbeekman/EditorConfig-Action@v1.1.1
+
 name: C/C++ CI
 
 on:
@@ -21,3 +24,5 @@ jobs:
       run: make check
     - name: make distcheck
       run: make distcheck
+      
+
