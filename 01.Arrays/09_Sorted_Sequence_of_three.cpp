@@ -1,6 +1,6 @@
-//Amazon SDE GeeksForGeeks Problems
-//Code is Written by Krishna (krishna_6431)
-//Topic : Array
+// Amazon SDE GeeksForGeeks Problems
+// Code is Written by Krishna (krishna_6431)
+// Topic : Array
 
 // Problem Statement :
 /*
@@ -21,16 +21,25 @@ Explanation: a sub-sequence 1 2 3 exist.
 // Time Complexity : O(n);
 // Space Complexity : O(1);
 
-Approach: 
+Approach:
 Hint: Use Auxiliary Space.
-Solution: So, the main motive is to find an element which has an element smaller than itself on the left side of the array and an element greater than itself on the right side of the array, if there is any such element then there exists a triplet that satisfies the criteria.
+Solution: So, the main motive is to find an element which has an element smaller than itself on the left side of the
+array and an element greater than itself on the right side of the array, if there is any such element then there exists
+a triplet that satisfies the criteria.
 
-Approach: This can be solved in a very simple way. To find an element which has an element smaller than itself on its left side of the array, check if that element is the smallest element while traversing the array from the starting index i.e., (0), and to check if there is an element greater than itself on its right side of the array check whether that element is the largest element while traversing from the end of the array i.e., (n-1). If the element is not the smallest element from 0 to that index then it has an element smaller than itself on its left side, and similarly, if the element is not the largest element from that index to the last index then there is a larger element on its right side.
+Approach: This can be solved in a very simple way. To find an element which has an element smaller than itself on its
+left side of the array, check if that element is the smallest element while traversing the array from the starting index
+i.e., (0), and to check if there is an element greater than itself on its right side of the array check whether that
+element is the largest element while traversing from the end of the array i.e., (n-1). If the element is not the
+smallest element from 0 to that index then it has an element smaller than itself on its left side, and similarly, if the
+element is not the largest element from that index to the last index then there is a larger element on its right side.
 
 Algorithm :
-1-->Create an auxiliary array smaller[0..n-1]. smaller[i] stores the index of a number which is smaller than arr[i] and is on the left side. The array contains -1 if there is no such element.
-2-->Create another auxiliary array greater[0..n-1]. greater[i] stores the index of a number which is greater than arr[i] and is on the right side of arr[i]. The array contains -1 if there is no such element.
-3-->Finally traverse both smaller[] and greater[] and find the index [i] for which both smaller[i] and greater[i] are not equal to -1.
+1-->Create an auxiliary array smaller[0..n-1]. smaller[i] stores the index of a number which is smaller than arr[i] and
+is on the left side. The array contains -1 if there is no such element. 2-->Create another auxiliary array
+greater[0..n-1]. greater[i] stores the index of a number which is greater than arr[i] and is on the right side of
+arr[i]. The array contains -1 if there is no such element. 3-->Finally traverse both smaller[] and greater[] and find
+the index [i] for which both smaller[i] and greater[i] are not equal to -1.
 */
 
 #include <bits/stdc++.h>
@@ -78,8 +87,7 @@ int main()
         {
             cout << 0 << "\n";
         }
-        else if ((res[0] < res[1] and res[1] < res[2]) and
-                 isSubSequence(a, res, n, res.size()))
+        else if ((res[0] < res[1] and res[1] < res[2]) and isSubSequence(a, res, n, res.size()))
         {
             cout << 1 << "\n";
         }
@@ -102,19 +110,20 @@ vector<int> find3Numbers(vector<int> arr, int N)
 
     for (int i = 1; i < N; ++i)
     {
-        smLeft[i] = min(arr[i - 1], smLeft[i - 1]); //stroring the smallest elemnt on left
+        smLeft[i] = min(arr[i - 1], smLeft[i - 1]); // stroring the smallest elemnt on left
     }
 
     for (int i = N - 2; i >= 0; --i)
     {
-        larRig[i] = max(arr[i + 1], larRig[i + 1]); //storing the largest element on right
+        larRig[i] = max(arr[i + 1], larRig[i + 1]); // storing the largest element on right
     }
 
     vector<int> ans;
 
     for (int i = 0; i < N; ++i)
     {
-        if (smLeft[i] < arr[i] && arr[i] < larRig[i]) //if conditions are valid(because above approach also conatins similar elements too)
+        if (smLeft[i] < arr[i] &&
+            arr[i] < larRig[i]) // if conditions are valid(because above approach also conatins similar elements too)
         {
             ans.push_back(smLeft[i]);
             ans.push_back(arr[i]);
