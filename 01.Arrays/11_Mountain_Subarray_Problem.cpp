@@ -4,9 +4,12 @@
 
 // Problem Statement :
 /*
-We are given an array of integers and a range, we need to find whether the subarray which falls in this range has values in the form of a mountain or not. All values of the subarray are said to be in the form of a mountain if either all values are increasing or decreasing or first increasing and then decreasing. More formally a subarray [a1, a2, a3 … aN] is said to be in form of a mountain if there exists an integer K, 1 <= K <= N such that,
-a1 <= a2 <= a3 .. <= aK >= a(K+1) >= a(K+2) …. >= aN
-You have to process Q queries. In each query you are given two integer L and R, denoting starting and last index of the subarrays respectively.
+We are given an array of integers and a range, we need to find whether the subarray which falls in this range has values
+in the form of a mountain or not. All values of the subarray are said to be in the form of a mountain if either all
+values are increasing or decreasing or first increasing and then decreasing. More formally a subarray [a1, a2, a3 … aN]
+is said to be in form of a mountain if there exists an integer K, 1 <= K <= N such that, a1 <= a2 <= a3 .. <= aK >=
+a(K+1) >= a(K+2) …. >= aN You have to process Q queries. In each query you are given two integer L and R, denoting
+starting and last index of the subarrays respectively.
 
 Example 1:
 
@@ -33,7 +36,11 @@ No.
 // Space Complexity : O(n);
 
 
-Approach:The problem has multiple queries so for each query the solution should be calculated with least possible time complexity. So create two extra spaces of the length of the original array. For every element find the last index on the left side which is increasing i.e. greater than its previous element and find the element on the right side will store the first index on the right side which is decreasing i.e. greater than its next element. If these value can be calculated for every index in constant time then for every given range the answer can be given in constant time.
+Approach:The problem has multiple queries so for each query the solution should be calculated with least possible time
+complexity. So create two extra spaces of the length of the original array. For every element find the last index on the
+left side which is increasing i.e. greater than its previous element and find the element on the right side will store
+the first index on the right side which is decreasing i.e. greater than its next element. If these value can be
+calculated for every index in constant time then for every given range the answer can be given in constant time.
 
 Algorithm:
 1-->Create two extra spaces of length n,left and right and a extra variable lastptr
@@ -42,7 +49,8 @@ Algorithm:
 
 3-->Traverse the original array from second index to the end
 
-4-->For every index check if it is greater than the pervious element, if yes then update the lastptr with the current index.
+4-->For every index check if it is greater than the pervious element, if yes then update the lastptr with the current
+index.
 
 5-->For every index store the lastptr in left[i]
 
@@ -56,7 +64,7 @@ Algorithm:
 
 10-->Now process the queries
 
-11-->for every query l, r, if right[l] >= left[r] then print yes else no 
+11-->for every query l, r, if right[l] >= left[r] then print yes else no
 
 */
 
@@ -64,8 +72,7 @@ Algorithm:
 
 using namespace std;
 
-vector<bool> processQueries(int a[], int n, vector<pair<int, int>> &queries,
-                            int q);
+vector<bool> processQueries(int a[], int n, vector<pair<int, int>> &queries, int q);
 
 int main()
 {
