@@ -4,7 +4,9 @@
 
 // Problem Statement :
 /*
-Given a sorted array arr[] of distinct integers. Sort the array into a wave-like array and return it. In other words, arrange the elements into a sequence such that a1 >= a2 <= a3 >= a4 <= a5..... (considering the increasing lexicographical order).
+Given a sorted array arr[] of distinct integers. Sort the array into a wave-like array and return it. In other words,
+arrange the elements into a sequence such that a1 >= a2 <= a3 >= a4 <= a5..... (considering the increasing
+lexicographical order).
 
 Example 1:
 
@@ -12,8 +14,8 @@ Input:
 N = 5
 arr[] = {1,2,3,4,5}
 Output: 2 1 4 3 5
-Explanation: Array elements after 
-sorting it in wave form are 
+Explanation: Array elements after
+sorting it in wave form are
 2 1 4 3 5.
 
 */
@@ -23,10 +25,11 @@ sorting it in wave form are
 // Space Complexity : O(n);
 
 
-Approach:This can be done in O(n) time by doing a single traversal of given array. The idea is based on the fact that if we make sure that all even positioned (at index 0, 2, 4, ..) elements are greater than their adjacent odd elements, we don’t need to worry about odd positioned element. Following are simple steps.
-1) Traverse all even positioned elements of input array, and do following.
-….a) If current element is smaller than previous odd element, swap previous and current.
-….b) If current element is smaller than next odd element, swap next and current.
+Approach:This can be done in O(n) time by doing a single traversal of given array. The idea is based on the fact that if
+we make sure that all even positioned (at index 0, 2, 4, ..) elements are greater than their adjacent odd elements, we
+don’t need to worry about odd positioned element. Following are simple steps. 1) Traverse all even positioned elements
+of input array, and do following. ….a) If current element is smaller than previous odd element, swap previous and
+current. ….b) If current element is smaller than next odd element, swap next and current.
 
 */
 
@@ -54,18 +57,18 @@ void convertToWave(int *arr, int n)
 int main()
 {
     int t, n;
-    cin >> t;   //Input testcases
-    while (t--) //While testcases exist
+    cin >> t;   // Input testcases
+    while (t--) // While testcases exist
     {
-        cin >> n; //input size of array
-        int a[n]; //declare array of size n
+        cin >> n; // input size of array
+        int a[n]; // declare array of size n
         for (int i = 0; i < n; i++)
-            cin >> a[i]; //input elements of array
+            cin >> a[i]; // input elements of array
 
         convertToWave(a, n);
 
         for (int i = 0; i < n; i++)
-            cout << a[i] << " "; //print array
+            cout << a[i] << " "; // print array
 
         cout << endl;
     }
