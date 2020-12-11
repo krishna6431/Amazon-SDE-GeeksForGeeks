@@ -19,8 +19,8 @@ much.very.program.this.like.i
 */
 
 // Approach :
-// Time Complexity : O(k);
-// Space Complexity : O(1);
+// Time Complexity : O(|s|);
+// Space Complexity : O(|s|);
 /*
 separate each word using '.' and then traverse from the last obtained word.
 */
