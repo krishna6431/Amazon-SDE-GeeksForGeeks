@@ -1,6 +1,6 @@
 // Amazon SDE GeeksForGeeks Problems
 // Code is Written by Krishna (krishna_6431)
-// Topic : Array
+// Topic : Linked_List
 
 // Problem Statement :
 /*
