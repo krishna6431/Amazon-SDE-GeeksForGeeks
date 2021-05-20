@@ -1,6 +1,6 @@
 // All Important Header Files
 #include <bits/stdc++.h>
-//ALL IMPORTANT MACROS
+// ALL IMPORTANT MACROS
 #define pb push_back
 #define mp make_pair
 #define fr first
@@ -14,13 +14,13 @@
 #define all(v) v.begin(), v.end()
 #define alla(a, n) a, a + n
 #define endl "\n"
-#define fast                          \
-    ios_base::sync_with_stdio(false); \
-    cin.tie(NULL);                    \
+#define fast                                                                                                           \
+    ios_base::sync_with_stdio(false);                                                                                  \
+    cin.tie(NULL);                                                                                                     \
     cout.tie(NULL);
-//USING NAME SPACE
+// USING NAME SPACE
 using namespace std;
-//SOME TYPEDEF DECLARATION
+// SOME TYPEDEF DECLARATION
 typedef long long ll;
 typedef unsigned long long ull;
 typedef pair<ll, ll> pll;
