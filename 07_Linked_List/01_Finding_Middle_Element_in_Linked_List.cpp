@@ -4,15 +4,17 @@
 
 // Problem Statement :
 /*
-Given a singly linked list of N nodes. The task is to find the middle of the linked list. For example, if given linked list is 1->2->3->4->5 then the output should be 3.
-If there are even nodes, then there would be two middle nodes, we need to print the second middle element. For example, if given linked list is 1->2->3->4->5->6 then the output should be 4.
+Given a singly linked list of N nodes. The task is to find the middle of the linked list. For example, if given linked
+list is 1->2->3->4->5 then the output should be 3. If there are even nodes, then there would be two middle nodes, we
+need to print the second middle element. For example, if given linked list is 1->2->3->4->5->6 then the output should
+be 4.
 
 Example 1:
 
 Input:
 LinkedList: 1->2->3->4->5
-Output: 3 
-Explanation: 
+Output: 3
+Explanation:
 Middle of linked list is 3.
 
 */
@@ -23,14 +25,17 @@ Middle of linked list is 3.
 
 /*
 Algorithm:
-Given a singly linked list, find the middle of the linked list. For example, if the given linked list is 1->2->3->4->5 then the output should be 3. 
-If there are even nodes, then there would be two middle nodes, we need to print the second middle element. For example, if given linked list is 1->2->3->4->5->6 then the output should be 4. 
+Given a singly linked list, find the middle of the linked list. For example, if the given linked list is 1->2->3->4->5
+then the output should be 3. If there are even nodes, then there would be two middle nodes, we need to print the second
+middle element. For example, if given linked list is 1->2->3->4->5->6 then the output should be 4.
 
-Method 1: 
-Traverse the whole linked list and count the no. of nodes. Now traverse the list again till count/2 and return the node at count/2. 
+Method 1:
+Traverse the whole linked list and count the no. of nodes. Now traverse the list again till count/2 and return the node
+at count/2.
 
-Method 2: 
-Traverse linked list using two pointers. Move one pointer by one and the other pointers by two. When the fast pointer reaches the end slow pointer will reach the middle of the linked list.
+Method 2:
+Traverse linked list using two pointers. Move one pointer by one and the other pointers by two. When the fast pointer
+reaches the end slow pointer will reach the middle of the linked list.
 */
 
 #include <bits/stdc++.h>
@@ -81,16 +86,16 @@ int main()
     }
     return 0;
 }
-/* Link list Node 
+/* Link list Node
 struct Node {
     int data;
     Node* next;
-    
+
     Node(int x){
         data = x;
         next = NULL;
     }
-    
+
 }; */
 
 /* Should return data of middle node. If linked list is empty, then  -1*/
@@ -130,4 +135,4 @@ int getMiddle(Node *head)
     // }
 }
 
-//Thank U So Much
+// Thank U So Much
