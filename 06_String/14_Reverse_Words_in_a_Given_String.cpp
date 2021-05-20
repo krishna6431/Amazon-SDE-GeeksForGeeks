@@ -1,68 +1,112 @@
-// Amazon SDE GeeksForGeeks Problems
-// Code is Written by Krishna (krishna_6431)
-// Topic : String
-
-// Problem Statement :
-/*
-Given a String S, reverse the string without reversing its individual words. Words are separated by dots.
-
-Example 1:
-
-Input:
-S = i.like.this.program.very.much
-Output: much.very.program.this.like.i
-Explanation: After reversing the whole
-string(not individual words), the input
-string becomes
-much.very.program.this.like.i
-
-*/
-
-// Approach :
-// Time Complexity : O(|s|);
-// Space Complexity : O(|s|);
-/*
-separate each word using '.' and then traverse from the last obtained word.
-*/
-
+// All Important Header Files
 #include <bits/stdc++.h>
+//ALL IMPORTANT MACROS
+#define pb push_back
+#define mp make_pair
+#define fr first
+#define sc second
+#define deb(x) cout << x << endl;
+#define display(start, end) for (int i = start; i < end; i++)
+#define MOD 1000000007
+#define len(x) x.size()
+#define min3(a, b, c) min(a, min(b, c))
+#define max3(a, b, c) max(a, max(b, c))
+#define all(v) v.begin(), v.end()
+#define alla(a, n) a, a + n
+#define endl "\n"
+#define fast                          \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(NULL);                    \
+    cout.tie(NULL);
+//USING NAME SPACE
 using namespace std;
-string reverseWords(string s);
+//SOME TYPEDEF DECLARATION
+typedef long long ll;
+typedef unsigned long long ull;
+typedef pair<ll, ll> pll;
+typedef vector<ll> vll;
+typedef vector<pll> vpll;
+typedef vector<vll> vvll;
+typedef vector<string> vs;
+// CODE WRITTEN BY KRISHNA_6431
 int main()
 {
-    int t;
-    cin >> t;
-    while (t--)
+    ll t, n, q;
+    cin >> t >> n >> q;
+    while (t-- != 0)
     {
-        string s;
-        cin >> s;
-        cout << reverseWords(s) << endl;
-    }
-} // } Driver Code Ends
+        vector<ll> a;
 
-string reverseWords(string s)
-{
-    // code here
-    vector<string> v;
-    string str = "";
-    for (int i = 0; i < s.size(); i++)
-    {
-        if (s[i] == '.')
+        cout << "1 2 3" << endl;
+
+        ll size = 3;
+        ll p;
+        cin >> p;
+        if (p == 2)
         {
-            v.push_back(str);
-            str = "";
+            a.push_back(1);
+            a.push_back(2);
+            a.push_back(3);
+        }
+        else if (p == 3)
+        {
+            a.push_back(1);
+            a.push_back(3);
+            a.push_back(2);
         }
         else
-            str += s[i];
+        {
+            a.push_back(2);
+            a.push_back(1);
+            a.push_back(3);
+        }
+        for (ll i = 4; i <= (n); i++)
+        {
+            ll u = 0;
+            ll v = size - 1;
+            while (u < v)
+            {
+                ll mid = u + ((v - u) / 2);
+                cout << a[mid] << " " << a[mid + 1] << " " << (i) << endl;
+                cin >> p;
+                if (p == a[mid])
+                {
+                    v = mid;
+                }
+                else if (p == a[mid + 1])
+                {
+
+                    u = mid + 1;
+                }
+                else
+                {
+                    a.insert(a.begin() + mid + 1, i);
+                    size++;
+                    break;
+                }
+            }
+            if (size != i)
+            {
+                if (u == 0)
+                {
+                    a.insert(a.begin(), i);
+                }
+                else
+                {
+                    a.push_back(i);
+                }
+                size++;
+            }
+        }
+        for (auto zzz : a)
+        {
+            cout << zzz << " ";
+        }
+        cout << endl;
+        cin >> p;
+        if (p == -1)
+        {
+            break;
+        }
     }
-    v.push_back(str);
-    string ans = "";
-    for (int i = v.size() - 1; i > 0; i--)
-    {
-        ans += v[i];
-        ans += ".";
-    }
-    ans += v[0];
-    return ans;
 }
-// Thank You So Much
