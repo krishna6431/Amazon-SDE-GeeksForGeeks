@@ -4,9 +4,10 @@
 
 // Problem Statement :
 /*
-Given a singly linked list, delete middle of the linked list. For example, if given linked list is 1->2->3->4->5 then linked list should be modified to 1->2->4->5.
-If there are even nodes, then there would be two middle nodes, we need to delete the second middle element. For example, if given linked list is 1->2->3->4->5->6 then it should be modified to 1->2->3->5->6.
-If the input linked list is NULL or has 1 node, then it should return NULL
+Given a singly linked list, delete middle of the linked list. For example, if given linked list is 1->2->3->4->5 then
+linked list should be modified to 1->2->4->5. If there are even nodes, then there would be two middle nodes, we need to
+delete the second middle element. For example, if given linked list is 1->2->3->4->5->6 then it should be modified to
+1->2->3->5->6. If the input linked list is NULL or has 1 node, then it should return NULL
 
 Example 1:
 
@@ -23,9 +24,13 @@ Output: 1 2 4 5
 /*
 
 Algorithm:
-Simple solution: The idea is to first count the number of nodes in a linked list, then delete n/2’th node using the simple deletion process. 
+Simple solution: The idea is to first count the number of nodes in a linked list, then delete n/2’th node using the
+simple deletion process.
 
-Approach: The above solution requires two traversals of the linked list. The middle node can delete using one traversal. The idea is to use two pointers, slow_ptr, and fast_ptr. Both pointers start from the head of list. When fast_ptr reaches the end, slow_ptr reaches middle. This idea is same as the one used in method 2 of this post. The additional thing in this post is to keep track of the previous middle so the middle node can be deleted.
+Approach: The above solution requires two traversals of the linked list. The middle node can delete using one traversal.
+The idea is to use two pointers, slow_ptr, and fast_ptr. Both pointers start from the head of list. When fast_ptr
+reaches the end, slow_ptr reaches middle. This idea is same as the one used in method 2 of this post. The additional
+thing in this post is to keep track of the previous middle so the middle node can be deleted.
 
 */
 
@@ -124,7 +129,7 @@ Node *deleteMid(Node *head)
     free(current);
     return head;
 
-    //Fast Pointer and Slow Pointer Method
+    // Fast Pointer and Slow Pointer Method
     // struct Node *deleteMid(struct Node * head)
     // {
     //     // Base cases
@@ -159,4 +164,4 @@ Node *deleteMid(Node *head)
     // }
 }
 
-//Thank U So Much
+// Thank U So Much
