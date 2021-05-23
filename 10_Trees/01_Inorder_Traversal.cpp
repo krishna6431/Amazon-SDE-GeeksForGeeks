@@ -18,8 +18,8 @@ Example 2:
 
 Input:
         10
-     /      \ 
-    20       30 
+     /      \
+    20       30
   /    \    /
  40    60  50
 Output: 40 20 60 10 50 30
@@ -56,7 +56,7 @@ struct Node
 };
 
 /* A binary tree node has data, pointer to left child
-   and a pointer to right child  
+   and a pointer to right child
 struct Node {
     int data;
     Node *left;
@@ -70,8 +70,8 @@ struct Node {
 
 class Solution
 {
-public:
-    //Function to return a list containing the inorder traversal of the tree.
+  public:
+    // Function to return a list containing the inorder traversal of the tree.
     vector<int> ans;
     vector<int> inOrder(Node *root)
     {
@@ -174,4 +174,4 @@ int main()
     return 0;
 }
 
-//Thank U So Much
+// Thank U So Much
