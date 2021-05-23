@@ -22,7 +22,7 @@ Input:
     1
    /
  3
-Output: 3   
+Output: 3
 */
 
 // Approach :
@@ -31,13 +31,13 @@ Output: 3
 
 /*
 
-Given a binary tree, find height of it. Height of empty tree is 0 and height of below tree is 2. 
- 
+Given a binary tree, find height of it. Height of empty tree is 0 and height of below tree is 2.
+
 
 
 Example Tree
-Recursively calculate height of left and right subtrees of a node and assign height to the node as max of the heights of two children plus 1. See below pseudo code and program for details.
-Algorithm: 
+Recursively calculate height of left and right subtrees of a node and assign height to the node as max of the heights of
+two children plus 1. See below pseudo code and program for details. Algorithm:
 
 
  maxDepth()
@@ -46,27 +46,27 @@ Algorithm:
 
 2. Else
 
-     (a) Get the max depth of left subtree recursively  i.e., 
+     (a) Get the max depth of left subtree recursively  i.e.,
 
           call maxDepth( tree->left-subtree)
 
-     (a) Get the max depth of right subtree recursively  i.e., 
+     (a) Get the max depth of right subtree recursively  i.e.,
 
           call maxDepth( tree->right-subtree)
 
-     (c) Get the max of max depths of left and right 
+     (c) Get the max of max depths of left and right
 
           subtrees and add 1 to it for the current node.
 
-         max_depth = max(max dept of left subtree,  
+         max_depth = max(max dept of left subtree,
 
-                             max depth of right subtree) 
+                             max depth of right subtree)
 
                              + 1
 
      (d) Return max_depth
 
-See the below diagram for more clarity about execution of the recursive function maxDepth() for above example tree. 
+See the below diagram for more clarity about execution of the recursive function maxDepth() for above example tree.
 
 
             maxDepth('1') = max(maxDepth('2'), maxDepth('3')) + 1
@@ -87,7 +87,7 @@ See the below diagram for more clarity about execution of the recursive function
 
 = max(maxDepth('4'), maxDepth('5')) + 1
 
-= 1 + 0   = 1         
+= 1 + 0   = 1
 
                    /    \
 
@@ -104,7 +104,7 @@ See the below diagram for more clarity about execution of the recursive function
 
 */
 
-//Initial template for C++
+// Initial template for C++
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -195,7 +195,7 @@ struct Node
     int data;
     struct Node* left;
     struct Node* right;
-    
+
     Node(int x){
         data = x;
         left = right = NULL;
@@ -204,8 +204,8 @@ struct Node
 */
 class Solution
 {
-public:
-    //Function to find the height of a binary tree.
+  public:
+    // Function to find the height of a binary tree.
     // My Solution
     int height(struct Node *root)
     {
@@ -263,4 +263,4 @@ int main()
     return 0;
 }
 
-//Thank U So Much
+// Thank U So Much
