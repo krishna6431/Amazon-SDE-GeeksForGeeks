@@ -4,7 +4,8 @@
 
 // Problem Statement :
 /*
-Given a Binary Tree. Check whether it is Symmetric or not, i.e. whether the binary tree is a Mirror image of itself or not.
+Given a Binary Tree. Check whether it is Symmetric or not, i.e. whether the binary tree is a Mirror image of itself or
+not.
 
 Example 1:
 
@@ -34,7 +35,9 @@ Output: False
 
 /*
 
-The idea is to write a recursive function isMirror() that takes two trees as an argument and returns true if trees are the mirror and false if trees are not mirrored. The isMirror() function recursively checks two roots and subtrees under the root.
+The idea is to write a recursive function isMirror() that takes two trees as an argument and returns true if trees are
+the mirror and false if trees are not mirrored. The isMirror() function recursively checks two roots and subtrees under
+the root.
 
 */
 
@@ -150,7 +153,7 @@ struct Node {
 };
 */
 
-//check function
+// check function
 bool check(struct Node *root1, struct Node *root2)
 {
     if (root1 == NULL && root2 == NULL)
@@ -168,4 +171,4 @@ bool isSymmetric(struct Node *root)
     return check(root, root);
 }
 
-//Thank U So Much
+// Thank U So Much
