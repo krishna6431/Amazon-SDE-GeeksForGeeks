@@ -11,31 +11,31 @@ Example 1:
 
 Input:
 {([])}
-Output: 
+Output:
 true
-Explanation: 
-{ ( [ ] ) }. Same colored brackets can form 
-balaced pairs, with 0 number of 
+Explanation:
+{ ( [ ] ) }. Same colored brackets can form
+balaced pairs, with 0 number of
 unbalanced bracket.
 Example 2:
 
-Input: 
+Input:
 ()
-Output: 
+Output:
 true
-Explanation: 
-(). Same bracket can form balanced pairs, 
-and here only 1 type of bracket is 
+Explanation:
+(). Same bracket can form balanced pairs,
+and here only 1 type of bracket is
 present and in balanced way.
 Example 3:
 
-Input: 
+Input:
 ([]
-Output: 
+Output:
 false
-Explanation: 
-([]. Here square bracket is balanced but 
-the small bracket is not balanced and 
+Explanation:
+([]. Here square bracket is balanced but
+the small bracket is not balanced and
 Hence , the output will be unbalanced.
 
 
@@ -45,14 +45,15 @@ Hence , the output will be unbalanced.
 
 /*
 
-Algorithm: 
+Algorithm:
 
 
 1->Declare a character stack S.
-2->Now traverse the expression string exp. 
+2->Now traverse the expression string exp.
 2->If the current character is a starting bracket ('(' or '{' or '[') then push it to stack.
-4->If the current character is a closing bracket (')' or '}' or ']') then pop from stack and if the popped character is the matching starting bracket then fine else brackets are not balanced.
-5->After complete traversal, if there is some starting bracket left in stack then "not balanced"
+4->If the current character is a closing bracket (')' or '}' or ']') then pop from stack and if the popped character is
+the matching starting bracket then fine else brackets are not balanced. 5->After complete traversal, if there is some
+starting bracket left in stack then "not balanced"
 
 */
 
@@ -61,8 +62,8 @@ using namespace std;
 
 class Solution
 {
-public:
-    //Function to check if brackets are balanced or not.
+  public:
+    // Function to check if brackets are balanced or not.
     void PrintStack(stack<char> s)
     {
         // If stack is empty
@@ -142,4 +143,4 @@ int main()
     }
 }
 
-//Thank U So Much
+// Thank U So Much
