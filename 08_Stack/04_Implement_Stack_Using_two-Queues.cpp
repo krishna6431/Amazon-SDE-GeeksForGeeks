@@ -18,10 +18,10 @@ Output: 3 4
 Explanation:
 push(2) the stack will be {2}
 push(3) the stack will be {2 3}
-pop()   poped element will be 3 the 
+pop()   poped element will be 3 the
         stack will be {2}
 push(4) the stack will be {2 4}
-pop()   poped element will be 4  
+pop()   poped element will be 4
 
 
 // Approach :
@@ -29,7 +29,8 @@ pop()   poped element will be 4
 // Expected Auxiliary Space: O(1) for both push() and pop().
 /*
 Method 1 (By making push operation costly)
-This method makes sure that newly entered element is always at the front of ‘q1’, so that pop operation just dequeues from ‘q1’. ‘q2’ is used to put every new element at front of ‘q1’.
+This method makes sure that newly entered element is always at the front of ‘q1’, so that pop operation just dequeues
+from ‘q1’. ‘q2’ is used to put every new element at front of ‘q1’.
 
 push(s, x) operation’s step are described below:
 Enqueue x to q2
@@ -42,7 +43,8 @@ Dequeue an item from q1 and return it.
 
 
 Method 2 (By making pop operation costly)
-In push operation, the new element is always enqueued to q1. In pop() operation, if q2 is empty then all the elements except the last, are moved to q2. Finally the last element is dequeued from q1 and returned.
+In push operation, the new element is always enqueued to q1. In pop() operation, if q2 is empty then all the elements
+except the last, are moved to q2. Finally the last element is dequeued from q1 and returned.
 
 push(s, x) operation:
 Enqueue x to q1 (assuming size of q1 is unlimited).
@@ -59,11 +61,11 @@ using namespace std;
 
 class QueueStack
 {
-private:
+  private:
     queue<int> q1;
     queue<int> q2;
 
-public:
+  public:
     void push(int);
     int pop();
 };
@@ -108,14 +110,14 @@ public:
 };
  */
 
-//Function to push an element into stack using two queues.
+// Function to push an element into stack using two queues.
 void QueueStack ::push(int x)
 {
     // Your Code
     q1.push(x);
 }
 
-//Function to pop an element from stack using two queues.
+// Function to pop an element from stack using two queues.
 int QueueStack ::pop()
 {
     // Your Code
