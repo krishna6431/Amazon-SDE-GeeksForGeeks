@@ -25,18 +25,21 @@ will be 1->2->3->4->5.
 // Space Complexity : O(N);
 
 /*
-Algorithm: 
+Algorithm:
 
-Let the head be the first node of the linked list to be sorted and headRef be the pointer to head. Note that we need a reference to head in MergeSort() as the below implementation changes next links to sort the linked lists (not data at the nodes), so the head node has to be changed if the data at the original head is not the smallest value in the linked list. 
+Let the head be the first node of the linked list to be sorted and headRef be the pointer to head. Note that we need a
+reference to head in MergeSort() as the below implementation changes next links to sort the linked lists (not data at
+the nodes), so the head node has to be changed if the data at the original head is not the smallest value in the linked
+list.
 
 
 MergeSort(headRef)
 
-1) If the head is NULL or there is only one element in the Linked List 
+1) If the head is NULL or there is only one element in the Linked List
 
     then return.
 
-2) Else divide the linked list into two halves.  
+2) Else divide the linked list into two halves.
 
       FrontBackSplit(head, &a, &b);
 
@@ -46,7 +49,7 @@ MergeSort(headRef)
 
 MergeSort(b);
 
-4) Merge the sorted a and b (using SortedMerge() discussed here) 
+4) Merge the sorted a and b (using SortedMerge() discussed here)
 
    and update the head pointer using headRef.
 
@@ -64,28 +67,27 @@ If the size of the linked list is 1 then return the head
 Find mid using The Tortoise and The Hare Approach
 Store the next of mid in head2 i.e. the right sub-linked list.
 Now Make the next midpoint null.
-Recursively call mergeSort() on both left and right sub-linked list and store the new head of the left and right linked list.
-Call merge() given the arguments new heads of left and right sub-linked lists and store the final head returned after merging.
-Return the final head of the merged linkedlist.
+Recursively call mergeSort() on both left and right sub-linked list and store the new head of the left and right linked
+list. Call merge() given the arguments new heads of left and right sub-linked lists and store the final head returned
+after merging. Return the final head of the merged linkedlist.
 
 merge(head1, head2):
 
 
 Take a pointer say merged to store the merged list in it and store a dummy node in it.
 Take a pointer temp and assign merge to it.
-If the data of head1 is less than the data of head2, then, store head1 in next of temp & move head1 to the next of head1.
-Else store head2 in next of temp & move head2 to the next of head2.
-Move temp to the next of temp.
-Repeat steps 3, 4 & 5 until head1 is not equal to null and head2 is not equal to null.
-Now add any remaining nodes of the first or the second linked list to the merged linked list.
-Return the next of merged(that will ignore the dummy and return the head of the final merged linked list)
+If the data of head1 is less than the data of head2, then, store head1 in next of temp & move head1 to the next of
+head1. Else store head2 in next of temp & move head2 to the next of head2. Move temp to the next of temp. Repeat steps
+3, 4 & 5 until head1 is not equal to null and head2 is not equal to null. Now add any remaining nodes of the first or
+the second linked list to the merged linked list. Return the next of merged(that will ignore the dummy and return the
+head of the final merged linked list)
 
 */
 
+#include <bits/stdc++.h>
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
-#include <bits/stdc++.h>
 using namespace std;
 
 struct Node
@@ -100,7 +102,7 @@ struct Node
 };
 
 /* Structure of the linked list node is as
-struct Node 
+struct Node
 {
     int data;
     struct Node* next;
@@ -110,7 +112,7 @@ struct Node
 
 class Solution
 {
-public:
+  public:
     Node *sortedMerge(Node *head1, Node *head2)
     {
         // base case
@@ -149,27 +151,27 @@ public:
         }
         return slow_ptr;
     }
-    //Function to sort the given linked list using Merge Sort.
+    // Function to sort the given linked list using Merge Sort.
     Node *mergeSort(Node *head)
     {
-        //base case
+        // base case
         if (head == NULL or head->next == NULL)
         {
             return head;
         }
-        //rec case
+        // rec case
         Node *mid = midPoint(head);
 
-        //break at mid point
+        // break at mid point
         Node *a = head;
         Node *b = mid->next;
         mid->next = NULL;
 
-        //recursive cases
+        // recursive cases
         a = mergeSort(a);
         b = mergeSort(b);
 
-        //merge case
+        // merge case
         return sortedMerge(a, b);
     }
 };
