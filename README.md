@@ -1,7 +1,7 @@
 # Amazon-SDE-GeeksForGeeks
 This repository contains the solution of the course Amazon SDE Problems On GeeksforGeeks
 <br><br>
-Version Used : C++14<br><br>
+Version Used : C++17<br><br>
 
 Connect with me :<br><br>
 
